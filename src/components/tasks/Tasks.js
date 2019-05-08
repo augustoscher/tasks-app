@@ -20,9 +20,19 @@ import React, { Component } from 'react';
       const tasks = await response.json();
       this.setState({ tasks: tasks });
     }
+
+    async deleteDoneTask(tasks) {
+      if (window.confirm(`Are you sure you want to delete?"`)) {
+      }
+      // this.props.loadTasks();
+    }
     
     componentDidMount() {
       this.loadTasks();
+    }
+
+    filterDoneTasks() {
+      return this.state.tasks.filter((task) => task.done == true)
     }
 
     render() {
@@ -35,8 +45,8 @@ import React, { Component } from 'react';
            </Col>
            <Col xs={{ span: 8, offset: 2 }} className="tasks_list">
              <p className="title">Done</p>
-             <List loadTasks={this.loadTasks} tasks={this.state.tasks.filter((task) => task.done == true)}/>       
-             <Button variant="red" className="float-right remove_tasks_btn">Remove all tasks</Button> 
+             <List loadTasks={this.loadTasks} tasks={this.state.tasks.filter((task) => task.done == true)}/> 
+             <Button variant="red" className="float-right remove_tasks_btn" onClick={() => this.deleteDoneTask(this.filterDoneTasks())}>Remove all tasks</Button>
            </Col>
          </Row>
        );

@@ -6,7 +6,7 @@ import React, { Component } from 'react';
 class List extends Component {
   
   async checkTask(task) {
-    let form = {'task': {'done': 'true'}}
+    // let form = {'task': {'done': 'true'}}
     await fetch(`https://gentle-beyond-69584.herokuapp.com/tasks/${task.id}`,
       {
         method: 'PUT',
