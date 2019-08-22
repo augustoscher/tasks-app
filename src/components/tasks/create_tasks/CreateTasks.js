@@ -8,7 +8,7 @@ function CreateTask(props) {
   const [show, setShow] = useState('');
 
   const handleSubmit = (async () => {
-    await fetch(`https://gentle-beyond-69584.herokuapp.com/tasks`,
+    await fetch(`https://rails-tasks-api.herokuapp.com/tasks`,
       {
         method: 'POST',
         headers: {
