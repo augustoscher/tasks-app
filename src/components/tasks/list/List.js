@@ -7,7 +7,7 @@ class List extends Component {
   
   async checkTask(task) {
     // let form = {'task': {'done': 'true'}}
-    await fetch(`https://gentle-beyond-69584.herokuapp.com/tasks/${task.id}`,
+    await fetch(`https://rails-tasks-api.herokuapp.com/tasks/${task.id}`,
       {
         method: 'PUT',
         headers: {
@@ -25,7 +25,7 @@ class List extends Component {
 
   async deleteTask(task) {
     if (window.confirm(`Are you sure you want to delete: "${task.title}"`)) {
-      await fetch(`https://gentle-beyond-69584.herokuapp.com/tasks/${task.id}`, { method: 'DELETE' });
+      await fetch(`https://rails-tasks-api.herokuapp.com/tasks/${task.id}`, { method: 'DELETE' });
       this.props.loadTasks();
     }
   }
