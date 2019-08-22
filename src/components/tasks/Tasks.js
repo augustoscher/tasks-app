@@ -16,7 +16,7 @@ import React, { Component } from 'react';
     }
     
     async loadTasks() {
-      let response = await fetch(`https://gentle-beyond-69584.herokuapp.com/tasks`);
+      let response = await fetch(`https://rails-tasks-api.herokuapp.com/tasks`);
       const tasks = await response.json();
       this.setState({ tasks: tasks });
     }
